@@ -1,19 +1,19 @@
 const Courses = [
   {
     id: '1',
-    title: 'Shekhar Odedra',
+    title: 'Demo 1',
     image: require('../asset/web.jpg'),
     description: 'Maths, Science, SS ',
   },
   {
     id: '2',
-    title: 'Ameer Odedra',
+    title: 'Demo 2 ',
     image: require('../asset/graphic.jpg'),
     description: 'Gujarati, English',
   },
   {
     id: '3',
-    title: 'Atashi Kulkarni',
+    title: 'Demo 3',
     image: require('../asset/coding.jpg'),
     description: 'PT, Hindi',
   },
