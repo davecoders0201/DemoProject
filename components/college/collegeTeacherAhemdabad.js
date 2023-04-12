@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -19,6 +19,7 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [previousCardTimer, setPreviousCardTimer] = useState(0);
   const [storedTimer, setStoredTimer] = useState(null);
+
   const courseCard = ({item}) => {
     const startTimer = () => {
       if (!isPlaying) {
@@ -59,15 +60,13 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
     };
 
     const handleCardClick = () => {
+      setCurrentCard(item.id);
       if (currentCard !== null) {
         stopTimer();
       }
-
       if (previousCard !== item.id) {
         // The clicked card is not the same as the previous card
         console.log('Previous card is different');
-        console.log('Current card:', currentCard);
-        console.log('Previous card:', previousCard);
         resetTimer();
       } else {
         // The clicked card is the same as the previous card
@@ -77,7 +76,6 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
         storeTimer();
       }
 
-      setCurrentCard(item.id);
       startTimer();
     };
 
