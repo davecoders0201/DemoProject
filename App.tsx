@@ -1,11 +1,3 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  FlatList,
-  Image,
-} from 'react-native';
 import React from 'react';
 import CollegeTeacherGandhinagar from './components/college/collegeTeacherGandhinagar';
 import CollegeTeacherAhemdabad from './components/college/collegeTeacherAhemdabad';
