@@ -74,7 +74,6 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
         console.log('Previous Card:', previousCard);
         storeTimer();
       }
-
       startTimer();
     };
 
