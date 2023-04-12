@@ -11,7 +11,7 @@ import {
 // import the Course Api which is created in the API folder
 import tutorApi from '../../data/tutorApi';
 
-const collegeTeacherGandhinagar = ({navigation}) => {
+const CollegeTeacherGandhinagar = ({navigation}) => {
   const [timer, setTimer] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [currentCard, setCurrentCard] = useState(null);
@@ -183,4 +183,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default collegeTeacherGandhinagar;
+export default CollegeTeacherGandhinagar;

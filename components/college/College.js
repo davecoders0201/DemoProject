@@ -11,7 +11,7 @@ import {
 // import the Course Api which is created in the API folder
 import Courses from '../../data/college';
 
-const college = ({navigation}) => {
+const CollegeScreen = ({navigation}) => {
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.mainHeader}>Colleges</Text>
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default college;
+export default CollegeScreen;
