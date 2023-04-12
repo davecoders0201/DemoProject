@@ -19,6 +19,7 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [previousCardTimer, setPreviousCardTimer] = useState(0);
   const [storedTimer, setStoredTimer] = useState(null);
+
   const courseCard = ({item}) => {
     const startTimer = () => {
       if (!isPlaying) {
@@ -59,15 +60,13 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
     };
 
     const handleCardClick = () => {
+      setCurrentCard(item.id);
       if (currentCard !== null) {
         stopTimer();
       }
-
       if (previousCard !== item.id) {
         // The clicked card is not the same as the previous card
         console.log('Previous card is different');
-        console.log('Current card:', currentCard);
-        console.log('Previous card:', previousCard);
         resetTimer();
       } else {
         // The clicked card is the same as the previous card
@@ -77,7 +76,6 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
         storeTimer();
       }
 
-      setCurrentCard(item.id);
       startTimer();
     };
 
@@ -111,7 +109,6 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
       </View>
     );
   };
-
   return (
     // Flatlist is a Prop which is use for the Scrolling the Items
     <FlatList
