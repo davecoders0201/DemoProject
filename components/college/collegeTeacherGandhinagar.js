@@ -18,7 +18,6 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
   const [previousCard, setPreviousCard] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [previousCardTimer, setPreviousCardTimer] = useState(0);
-  const [storedTimer, setStoredTimer] = useState(null);
 
   const courseCard = ({item}) => {
     const startTimer = () => {
