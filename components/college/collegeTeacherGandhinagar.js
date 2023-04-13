@@ -60,7 +60,6 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
     };
 
     const handleCardClick = () => {
-      setPreviousCard(currentCard);
       if (currentCard !== null) {
         stopTimer();
       }
