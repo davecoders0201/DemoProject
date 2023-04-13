@@ -63,20 +63,19 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
         stopTimer();
       }
       if (previousCard !== item.id) {
-        // The clicked Card is not the same as the previous Card
-        console.log('Previous Card is different');
+        // The clicked card is not the same as the previous card
+        console.log('Previous card is different');
         resetTimer();
       } else {
-        // The clicked Card is the same as the previous Card
-        console.log('Current Card is the same as previous Card');
-        console.log('Current Card:', currentCard);
-        console.log('Previous Card:', previousCard);
+        // The clicked card is the same as the previous card
+        console.log('Current card is the same as previous card');
+        console.log('Current card:', currentCard);
+        console.log('Previous card:', previousCard);
         storeTimer();
       }
       setCurrentCard(item.id);
       startTimer();
     };
-
     return (
       <View style={{margin: 10}}>
         <TouchableOpacity
