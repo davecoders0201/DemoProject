@@ -59,7 +59,6 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
     };
 
     const handleCardClick = () => {
-      setCurrentCard(item.id);
       if (currentCard !== null) {
         stopTimer();
       }
@@ -74,7 +73,7 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
         console.log('Previous card:', previousCard);
         storeTimer();
       }
-
+      setCurrentCard(item.id);
       startTimer();
     };
 
