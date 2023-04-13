@@ -16,7 +16,6 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
   const [intervalId, setIntervalId] = useState(null);
   const [currentCard, setCurrentCard] = useState(null);
   const [previousCard, setPreviousCard] = useState(null);
-  const [previousCardId, setPreviousCardId] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [previousCardTimer, setPreviousCardTimer] = useState(0);
 
