@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   StyleSheet,
   Text,
@@ -16,6 +16,7 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
   const [intervalId, setIntervalId] = useState(null);
   const [currentCard, setCurrentCard] = useState(null);
   const [previousCard, setPreviousCard] = useState(null);
+  const [previousCardId, setPreviousCardId] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [previousCardTimer, setPreviousCardTimer] = useState(0);
 
@@ -59,7 +60,7 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
     };
 
     const handleCardClick = () => {
-      setCurrentCard(item.id);
+      setPreviousCard(currentCard);
       if (currentCard !== null) {
         stopTimer();
       }
@@ -74,6 +75,7 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
         console.log('Previous Card:', previousCard);
         storeTimer();
       }
+      setCurrentCard(item.id);
       startTimer();
     };
 
@@ -143,7 +145,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: '#344055',
     textTransform: 'uppercase',
-    // fontWeight: 500,
     paddingBottom: 15,
     textAlign: 'center',
     fontFamily: 'Nunito_700Bold',
