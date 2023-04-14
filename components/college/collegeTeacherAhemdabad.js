@@ -27,10 +27,6 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
         }, 1000);
         setIntervalId(id);
         setIsPlaying(true);
-        if (previousCard !== null) {
-          tutorApiAhemdabad.find(course => course.id === previousCard).time =
-            previousCardTimer;
-        }
       }
     };
 
@@ -65,7 +61,7 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
       if (previousCard !== item.id) {
         // The clicked card is not the same as the previous card
         console.log('Previous card is different');
-        resetTimer();
+        // resetTimer();
       } else {
         // The clicked card is the same as the previous card
         console.log('Current card is the same as previous card');
@@ -79,18 +75,17 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
 
     return (
       <View style={{margin: 10}}>
-        <TouchableOpacity
+        <View
           style={{
-            backgroundColor: currentCard === item.id ? '#ff5435' : '#D9D9D9',
+            backgroundColor: '#ff5435',
             padding: 10,
             borderRadius: 10,
-          }}
-          onPress={handleCardClick}>
+          }}>
           <Text style={{fontWeight: 'bold', fontSize: 18}}>{item.title}</Text>
           <Text>{item.description}</Text>
-          {currentCard === item.id && (
-            <View style={{flexDirection: 'row', marginTop: 10}}>
-              <Text style={{marginRight: 10}}>{formatTime(timer)}</Text>
+          <View style={{flexDirection: 'row', marginTop: 10}}>
+            <Text style={{marginRight: 10}}>{formatTime(timer)}</Text>
+            <TouchableOpacity onPress={handleCardClick}>
               <TouchableOpacity onPress={isPlaying ? stopTimer : startTimer}>
                 <Image
                   source={
@@ -101,9 +96,9 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
                   style={{width: 20, height: 20}}
                 />
               </TouchableOpacity>
-            </View>
-          )}
-        </TouchableOpacity>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     );
   };
