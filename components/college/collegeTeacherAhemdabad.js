@@ -15,9 +15,7 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
   const [timer, setTimer] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [currentCard, setCurrentCard] = useState(null);
-  const [previousCard, setPreviousCard] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [previousCardTimer, setPreviousCardTimer] = useState(0);
 
   const courseCard = ({item}) => {
     const startTimer = () => {
@@ -37,14 +35,6 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
         setPreviousCardTimer(timer);
         setPreviousCard(currentCard);
       }
-    };
-
-    const resetTimer = () => {
-      setTimer(0);
-    };
-
-    const storeTimer = () => {
-      setTimer(previousCardTimer);
     };
     const formatTime = time => {
       const minutes = Math.floor(time / 60)
