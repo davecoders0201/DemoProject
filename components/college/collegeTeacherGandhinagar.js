@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -76,6 +76,7 @@ const CollegeTeacherGandhinagar = ({navigation}) => {
       setCurrentCard(item.id);
       startTimer();
     };
+
     return (
       <View style={{margin: 10}}>
         <TouchableOpacity
@@ -142,6 +143,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: '#344055',
     textTransform: 'uppercase',
+    // fontWeight: 500,
     paddingBottom: 15,
     textAlign: 'center',
     fontFamily: 'Nunito_700Bold',
