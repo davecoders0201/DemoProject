@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
-import {Text, View, Image, TouchableOpacity, FlatList} from 'react-native';
+import React, {useState, useRef} from 'react';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 
-// import the Course Api which is created in the API folder
 import tutorApiAhemdabad from '../../data/tutorApiAhemdabad';
 
-const CollegeTeacherAhemdabad = ({navigation}) => {
+const CourseCard = ({course}) => {
   const [timer, setTimer] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const intervalRef = useRef(null);
 
-  // const courseCard = ({item}) => {
   const startTimer = () => {
     if (!isPlaying) {
       const id = setInterval(() => {
@@ -26,6 +25,7 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
       setIsPlaying(false);
     }
   };
+
   const formatTime = time => {
     const minutes = Math.floor(time / 60)
       .toString()
@@ -33,10 +33,8 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
     const seconds = (time % 60).toString().padStart(2, '0');
     return `${minutes}:${seconds}`;
   };
-  // const selectedCard = tutorApiAhemdabad.map(Id => {
-  //   return Id.id;
-  // });
-  return tutorApiAhemdabad.map(item => (
+
+  return (
     <View style={{margin: 10}}>
       <View
         style={{
@@ -51,7 +49,7 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
             fontWeight: 'bold',
             fontSize: 18,
           }}>
-          {item.title}
+          {course.title}
         </Text>
         <View style={{flexDirection: 'row'}}>
           <Text style={{marginRight: 10, fontSize: 17}}>
@@ -70,15 +68,17 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
         </View>
       </View>
     </View>
-  ));
-  // };
-  // return (
-  //   // Flatlist is a Prop which is use for the Scrolling the Items
-  //   <FlatList
-  //     keyExtractor={item => item.id}
-  //     data={tutorApiAhemdabad}
-  //     renderItem={courseCard}
-  //   />
-  // );
+  );
 };
+
+const CollegeTeacherAhemdabad = () => {
+  return (
+    <View>
+      {tutorApiAhemdabad.map(course => (
+        <CourseCard key={course.id} course={course} />
+      ))}
+    </View>
+  );
+};
+
 export default CollegeTeacherAhemdabad;
