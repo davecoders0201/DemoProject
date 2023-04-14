@@ -14,7 +14,6 @@ import tutorApiAhemdabad from '../../data/tutorApiAhemdabad';
 const CollegeTeacherAhemdabad = ({navigation}) => {
   const [timer, setTimer] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
-  const [currentCard, setCurrentCard] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const courseCard = ({item}) => {
@@ -32,8 +31,6 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
       if (isPlaying) {
         clearInterval(intervalId);
         setIsPlaying(false);
-        setPreviousCardTimer(timer);
-        setPreviousCard(currentCard);
       }
     };
     const formatTime = time => {
@@ -71,7 +68,7 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
                     ? require('../../asset/paus.png')
                     : require('../../asset/play.png')
                 }
-                style={{width: 20, height: 20}}
+                style={{width: 20, height: 23}}
               />
             </TouchableOpacity>
           </View>
@@ -91,63 +88,63 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
 
 // This is One type of css in the React Native File
 const styles = StyleSheet.create({
-  cardImage: {
-    width: '100%',
-    height: undefined,
-    aspectRatio: 1,
-  },
-  mainContainer: {
-    paddingHorizontal: 20,
-  },
-  courseContainer: {
-    padding: 10,
-    backgroundColor: 'rgba(255, 255, 255, 0.90)',
-    textAlign: 'center',
-    borderRadius: 10,
-    shadowColor: 'grey',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.5,
-    shadowRadius: 8,
-    elevation: 8,
-    marginVertical: 10,
-  },
-  mainHeader: {
-    fontSize: 22,
-    color: '#344055',
-    textTransform: 'uppercase',
-    // fontWeight: 500,
-    paddingBottom: 15,
-    textAlign: 'center',
-    fontFamily: 'Nunito_700Bold',
-  },
-  description: {
-    textAlign: 'center',
-    fontFamily: 'WorkSans_400Regular',
-    paddingBottom: 15,
-    lineHeight: 20,
-    fontSize: 16,
-    color: '#7d7d7d',
-  },
-  buttonContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  buttonStyle: {
-    backgroundColor: '#ff5435',
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 20,
-    color: '#eee',
-    fontFamily: 'WorkSans_400Regular',
-    textTransform: 'capitalize',
-  },
+  // cardImage: {
+  //   width: '100%',
+  //   height: undefined,
+  //   aspectRatio: 1,
+  // },
+  // mainContainer: {
+  //   paddingHorizontal: 20,
+  // },
+  // courseContainer: {
+  //   padding: 10,
+  //   backgroundColor: 'rgba(255, 255, 255, 0.90)',
+  //   textAlign: 'center',
+  //   borderRadius: 10,
+  //   shadowColor: 'grey',
+  //   shadowOffset: {width: 0, height: 0},
+  //   shadowOpacity: 0.5,
+  //   shadowRadius: 8,
+  //   elevation: 8,
+  //   marginVertical: 10,
+  // },
+  // mainHeader: {
+  //   fontSize: 22,
+  //   color: '#344055',
+  //   textTransform: 'uppercase',
+  //   // fontWeight: 500,
+  //   paddingBottom: 15,
+  //   textAlign: 'center',
+  //   fontFamily: 'Nunito_700Bold',
+  // },
+  // description: {
+  //   textAlign: 'center',
+  //   fontFamily: 'WorkSans_400Regular',
+  //   paddingBottom: 15,
+  //   lineHeight: 20,
+  //   fontSize: 16,
+  //   color: '#7d7d7d',
+  // },
+  // buttonContainer: {
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  //   justifyContent: 'center',
+  // },
+  // buttonStyle: {
+  //   backgroundColor: '#ff5435',
+  //   borderRadius: 5,
+  //   paddingVertical: 10,
+  //   paddingHorizontal: 20,
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // },
+  // buttonText: {
+  //   fontSize: 20,
+  //   color: '#eee',
+  //   fontFamily: 'WorkSans_400Regular',
+  //   textTransform: 'capitalize',
+  // },
 });
 
 export default CollegeTeacherAhemdabad;
