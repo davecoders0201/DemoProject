@@ -33,10 +33,10 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
     const seconds = (time % 60).toString().padStart(2, '0');
     return `${minutes}:${seconds}`;
   };
-  const selectedCard = tutorApiAhemdabad.find(Id => {
-    return Id.id;
-  });
-  return (
+  // const selectedCard = tutorApiAhemdabad.map(Id => {
+  //   return Id.id;
+  // });
+  return tutorApiAhemdabad.map(item => (
     <View style={{margin: 10}}>
       <View
         style={{
@@ -50,14 +50,17 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
           style={{
             fontWeight: 'bold',
             fontSize: 18,
-          }}>
-          {selectedCard.title}
+          }}
+          key={item.id}>
+          {item.title}
         </Text>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={{marginRight: 10, fontSize: 17}}>
+        <View style={{flexDirection: 'row'}} key={item.id}>
+          <Text style={{marginRight: 10, fontSize: 17}} key={item.id}>
             {formatTime(timer)}
           </Text>
-          <TouchableOpacity onPress={isPlaying ? stopTimer : startTimer}>
+          <TouchableOpacity
+            onPress={isPlaying ? stopTimer : startTimer}
+            key={item.id}>
             <Image
               source={
                 isPlaying
@@ -65,12 +68,13 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
                   : require('../../asset/play.png')
               }
               style={{width: 20, height: 23}}
+              key={item.id}
             />
           </TouchableOpacity>
         </View>
       </View>
     </View>
-  );
+  ));
   // };
   // return (
   //   // Flatlist is a Prop which is use for the Scrolling the Items
