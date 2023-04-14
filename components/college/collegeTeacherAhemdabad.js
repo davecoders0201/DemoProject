@@ -53,26 +53,6 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
       const seconds = (time % 60).toString().padStart(2, '0');
       return `${minutes}:${seconds}`;
     };
-
-    const handleCardClick = () => {
-      if (currentCard !== null) {
-        stopTimer();
-      }
-      if (previousCard !== item.id) {
-        // The clicked card is not the same as the previous card
-        console.log('Previous card is different');
-        // resetTimer();
-      } else {
-        // The clicked card is the same as the previous card
-        console.log('Current card is the same as previous card');
-        console.log('Current card:', currentCard);
-        console.log('Previous card:', previousCard);
-        storeTimer();
-      }
-      setCurrentCard(item.id);
-      startTimer();
-    };
-
     return (
       <View style={{margin: 10}}>
         <View
@@ -85,17 +65,15 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
           <Text>{item.description}</Text>
           <View style={{flexDirection: 'row', marginTop: 10}}>
             <Text style={{marginRight: 10}}>{formatTime(timer)}</Text>
-            <TouchableOpacity onPress={handleCardClick}>
-              <TouchableOpacity onPress={isPlaying ? stopTimer : startTimer}>
-                <Image
-                  source={
-                    isPlaying
-                      ? require('../../asset/paus.png')
-                      : require('../../asset/play.png')
-                  }
-                  style={{width: 20, height: 20}}
-                />
-              </TouchableOpacity>
+            <TouchableOpacity onPress={isPlaying ? stopTimer : startTimer}>
+              <Image
+                source={
+                  isPlaying
+                    ? require('../../asset/paus.png')
+                    : require('../../asset/play.png')
+                }
+                style={{width: 20, height: 20}}
+              />
             </TouchableOpacity>
           </View>
         </View>
