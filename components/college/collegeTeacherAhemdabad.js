@@ -60,11 +60,20 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
             backgroundColor: '#ff5435',
             padding: 10,
             borderRadius: 10,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
           }}>
-          <Text style={{fontWeight: 'bold', fontSize: 18}}>{item.title}</Text>
-          <Text>{item.description}</Text>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-            <Text style={{marginRight: 10}}>{formatTime(timer)}</Text>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              fontSize: 18,
+            }}>
+            {item.title}
+          </Text>
+          <View style={{flexDirection: 'row'}}>
+            <Text style={{marginRight: 10, fontSize: 17}}>
+              {formatTime(timer)}
+            </Text>
             <TouchableOpacity onPress={isPlaying ? stopTimer : startTimer}>
               <Image
                 source={
