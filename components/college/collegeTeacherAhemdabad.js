@@ -50,17 +50,14 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
           style={{
             fontWeight: 'bold',
             fontSize: 18,
-          }}
-          key={item.id}>
+          }}>
           {item.title}
         </Text>
-        <View style={{flexDirection: 'row'}} key={item.id}>
-          <Text style={{marginRight: 10, fontSize: 17}} key={item.id}>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={{marginRight: 10, fontSize: 17}}>
             {formatTime(timer)}
           </Text>
-          <TouchableOpacity
-            onPress={isPlaying ? stopTimer : startTimer}
-            key={item.id}>
+          <TouchableOpacity onPress={isPlaying ? stopTimer : startTimer}>
             <Image
               source={
                 isPlaying
@@ -68,7 +65,6 @@ const CollegeTeacherAhemdabad = ({navigation}) => {
                   : require('../../asset/play.png')
               }
               style={{width: 20, height: 23}}
-              key={item.id}
             />
           </TouchableOpacity>
         </View>
